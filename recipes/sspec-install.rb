@@ -17,7 +17,7 @@ bash 'install_rbenv' do
     EOH
 end
 
-bash 'install_ruby'
+bash 'install_ruby' do
   code <<-EOH
     git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build > /var/chef-run.log
     echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
