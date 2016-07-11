@@ -44,6 +44,7 @@ bash 'install_serverspec' do
 #  code 'gem install serverspec'
   code <<-EOH
     ~/.rbenv/bin/rbenv versions
+    ~/.rbenv/bin/rbenv global 2.2.2
     ruby -v
     EOH
 end
