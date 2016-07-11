@@ -31,8 +31,13 @@ bash 'install_ruby' do
     ~/.rbenv/bin/rbenv global 2.2.2
     ruby -v
     EOH
+  not_if { ::File.exists?('/root/.rbenv/versions/2.2.2') }
 end
 
 execute 'install_bundler' do
   command 'gem install bundler'
+end
+
+execute 'install_serverspec' do
+  command 'gem install serverspec'
 end
