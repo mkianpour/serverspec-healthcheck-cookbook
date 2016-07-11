@@ -45,6 +45,7 @@ bash 'install_serverspec' do
   code <<-EOH
     ~/.rbenv/bin/rbenv versions
     ~/.rbenv/bin/rbenv global 2.2.2
+    eval "$(rbenv init -)"
     ruby -v
     EOH
 end
