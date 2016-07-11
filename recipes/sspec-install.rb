@@ -15,6 +15,7 @@ bash 'install_rbenv' do
     echo 'eval "$(rbenv init -)"' >> ~/.bashrc
     exec $SHELL
     EOH
+end
 
 bash 'install_ruby'
   code <<-EOH
