@@ -17,17 +17,20 @@ bash 'install_rbenv' do
     EOH
 end
 
-bash 'install_ruby' do
+bash 'ruby-build download' do
   code <<-EOH
     git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build > /var/chef-run.log
     echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
     exec $SHELL
+    EOH
+end
+
+bash 'install_ruby' do
+  code <<-EOH
     rbenv install 2.3.1
     rbenv global 2.3.1
     ruby -v
     EOH
-  # user  'root'
-  # group 'root'
 end
 
 execute 'install_bundler' do
