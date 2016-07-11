@@ -31,6 +31,7 @@ bash 'install_ruby' do
   code <<-EOH
     ~/.rbenv/bin/rbenv install 2.2.2
     ~/.rbenv/bin/rbenv global 2.2.2
+    rbenv rehash
     EOH
   not_if { ::File.exists?('/root/.rbenv/versions/2.2.2') }
 end
