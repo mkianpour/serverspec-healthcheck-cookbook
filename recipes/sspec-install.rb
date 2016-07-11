@@ -31,7 +31,7 @@ bash 'install_ruby' do
   code <<-EOH
     ~/.rbenv/bin/rbenv install 2.2.2
     ~/.rbenv/bin/rbenv global 2.2.2
-    rbenv rehash
+    ~/.rbenv/bin/rbenv rehash
     EOH
   not_if { ::File.exists?('/root/.rbenv/versions/2.2.2') }
 end
@@ -42,6 +42,8 @@ end
 
 bash 'install_serverspec' do
 #  code 'gem install serverspec'
-  code '~/.rbenv/bin/rbenv versions'
-  user 'root'
+  code <<-EOH
+    ~/.rbenv/bin/rbenv versions
+    ruby -v
+    EOH
 end
