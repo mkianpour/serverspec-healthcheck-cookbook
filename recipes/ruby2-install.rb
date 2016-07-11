@@ -27,11 +27,13 @@ bash 'ruby-build download' do
   not_if { ::File.exists?('/root/.rbenv/plugins/ruby-build/bin') }
 end
 
+rubyver = node['serverspec']['ruby-version']
+
 bash 'install_ruby' do
   code <<-EOH
-    ~/.rbenv/bin/rbenv install 2.2.2
-    ~/.rbenv/bin/rbenv global 2.2.2
+    ~/.rbenv/bin/rbenv install #{rubyver}
+    ~/.rbenv/bin/rbenv global #{rubyver}
     ~/.rbenv/bin/rbenv rehash
     EOH
-  not_if { ::File.exists?('/root/.rbenv/versions/2.2.2') }
+  not_if { ::File.exists?("/root/.rbenv/versions/#{rubyver}") }
 end
