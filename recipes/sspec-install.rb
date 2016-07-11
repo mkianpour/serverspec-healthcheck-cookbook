@@ -15,6 +15,7 @@ bash 'install_rbenv' do
     echo 'eval "$(rbenv init -)"' >> ~/.bashrc
     exec $SHELL
     EOH
+  not_if { ::File.exists?('/root/.rbenv') }
 end
 
 bash 'ruby-build download' do
@@ -23,6 +24,7 @@ bash 'ruby-build download' do
     echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
     exec $SHELL
     EOH
+  not_if { ::File.exists?('/root/.rbenv/plugins/ruby-build/bin') }
 end
 
 bash 'install_ruby' do
@@ -38,7 +40,6 @@ execute 'install_bundler' do
   command 'gem install bundler'
 end
 
-execute 'install_serverspec' do
-  command 'gem install serverspec'
-  user 'root'
+bash 'install_serverspec' do
+  code 'gem install serverspec'
 end

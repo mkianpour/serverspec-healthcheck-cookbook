@@ -13,7 +13,7 @@ e.g.
 ### Platforms
 
 - Ubuntu 14.04 or later
-- 1024 MB of RAM
+- 1024 MB of RAM to handle ruby2 install
 
 ### Chef
 
