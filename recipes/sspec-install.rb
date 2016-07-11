@@ -27,8 +27,8 @@ end
 
 bash 'install_ruby' do
   code <<-EOH
-    rbenv install 2.3.1
-    rbenv global 2.3.1
+    ~/.rbenv/bin/rbenv install 2.3.1
+    ~/.rbenv/bin/rbenv global 2.3.1
     ruby -v
     EOH
 end
