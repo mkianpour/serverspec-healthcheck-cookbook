@@ -21,8 +21,8 @@ bash 'install_ruby_rbenv' do
     rbenv global 2.3.1
     ruby -v
     EOH
-  user  'root'
-  group 'root'
+  # user  'root'
+  # group 'root'
 end
 
 execute 'install_bundler' do
