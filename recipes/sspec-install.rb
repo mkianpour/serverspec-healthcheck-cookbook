@@ -8,7 +8,7 @@ package [ 'git-core', 'curl', 'zlib1g-dev', 'build-essential',
   action :install
 end
 
-script 'install_ruby_rbenv' do
+bash 'install_ruby_rbenv' do
   code <<-EOH
     git clone https://github.com/rbenv/rbenv.git ~/.rbenv
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
@@ -21,7 +21,8 @@ script 'install_ruby_rbenv' do
     rbenv global 2.3.1
     ruby -v
     EOH
-  user 'root'
+  user  'root'
+  group 'root'
 end
 
 execute 'install_bundler' do
