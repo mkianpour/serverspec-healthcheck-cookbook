@@ -12,7 +12,7 @@ TODO: List your cookbook requirements. Be sure to include any requirements this 
 e.g.
 ### Platforms
 
-- SandwichOS
+- Ubuntu 14.04 or later
 
 ### Chef
 
@@ -20,7 +20,7 @@ e.g.
 
 ### Cookbooks
 
-- `toaster` - serverspec-healthcheck needs toaster to brown your bagel.
+- `apt` - serverspec-healthcheck needs apt to do apt-get update.
 
 ## Attributes
 
