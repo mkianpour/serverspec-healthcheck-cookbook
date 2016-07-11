@@ -40,4 +40,5 @@ end
 
 execute 'install_serverspec' do
   command 'gem install serverspec'
+  user 'root'
 end
