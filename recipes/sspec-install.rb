@@ -8,12 +8,16 @@ package [ 'git-core', 'curl', 'zlib1g-dev', 'build-essential',
   action :install
 end
 
-bash 'install_ruby_rbenv' do
+bash 'install_rbenv' do
   code <<-EOH
     git clone https://github.com/rbenv/rbenv.git ~/.rbenv
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
     echo 'eval "$(rbenv init -)"' >> ~/.bashrc
     exec $SHELL
+    EOH
+
+bash 'install_ruby'
+  code <<-EOH
     git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build > /var/chef-run.log
     echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
     exec $SHELL
