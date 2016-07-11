@@ -42,4 +42,5 @@ end
 
 bash 'install_serverspec' do
   code 'gem install serverspec'
+  user 'root'
 end
