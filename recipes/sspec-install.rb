@@ -44,7 +44,7 @@ bash 'install_serverspec' do
 #  code 'gem install serverspec'
   code <<-EOH
     ~/.rbenv/bin/rbenv versions
-    eval "$(rbenv init -)";
+    eval "$(/root/.rbenv/bin/rbenv init -)";
     ruby -v
     EOH
 end
