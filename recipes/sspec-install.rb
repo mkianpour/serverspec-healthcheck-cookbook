@@ -42,6 +42,6 @@ end
 
 bash 'install_serverspec' do
 #  code 'gem install serverspec'
-  code 'ruby -v'
+  code '~/.rbenv/bin/rbenv versions'
   user 'root'
 end
