@@ -7,4 +7,5 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'sspec-install'
+include_recipe 'ruby2-install'
+include_recipe 'serverspec-install'
