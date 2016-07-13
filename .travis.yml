@@ -1,0 +1,19 @@
+language: ruby
+
+cache:
+- bundler
+- apt
+
+env:
+- BERKSHELF_PATH=/tmp/
+
+before_install:
+- sudo apt-get update -qq
+- curl -L https://www.chef.io/chef/install.sh | sudo bash -s -- -v 11.18.6
+
+install:
+- bundle install
+- bundle exec berks vendor /tmp/cookbooks
+
+script:
+- kitchen verify
