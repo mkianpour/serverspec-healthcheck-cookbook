@@ -1,6 +1,5 @@
 source 'https://supermarket.chef.io'
-source 'https://github.com/mkianpour'
 
 cookbook 'apache2'
 cookbook 'git'
-cookbook 'serverspec-healthcheck'
+cookbook 'serverspec-healthcheck', git: 'https://github.com/mkianpour/serverspec-healthcheck-cookbook.git'
