@@ -20,4 +20,4 @@ suites:
       - recipe[serverspec-healthcheck::healthcheck]
     attributes:
       serverspec:
-        user_spec_path: '../..'
+        user_spec_path: "/Users/mehdi/codes/vagrant/serverspec-test"
