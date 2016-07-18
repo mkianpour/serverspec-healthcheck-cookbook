@@ -14,10 +14,7 @@ suites:
     run_list:
       - recipe[serverspec-healthcheck::ruby2_install]
       - recipe[serverspec-healthcheck::serverspec_install]
-    attributes:
-  - name: healthcheck
-    run_list:
       - recipe[serverspec-healthcheck::healthcheck]
     attributes:
       serverspec:
-        user_spec_path: ""
+        user_spec_path: "spec"
