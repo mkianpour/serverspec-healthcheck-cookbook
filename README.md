@@ -1,9 +1,12 @@
 # serverspec-healthcheck Cookbook
 
-TODO: Enter the cookbook description here.
+Idea is to prepare a machine which is smart enough to check its own health and report it back as a web page.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Specifically, it would be helpful for load balancers. As Load Balancers check health of system and stop sending traffic if it's not healthy. This health check is usually done using a URL. The generated health check page can be used for this URL then. If self-check fails, it will return a 3xx status code, otherwise 200 status code.
+
+Self health check can also be useful in continuous delivery and if check fails after deploy, deployer will be notified right away instead of asking the developer.
+
+To achieve this goal, 'Serverspec' is being used. So, Serverspec will be installed on the instance. 'spec' files go to 'files' directory and healthcheck page will be generated based on it.
 
 ## Requirements
 
