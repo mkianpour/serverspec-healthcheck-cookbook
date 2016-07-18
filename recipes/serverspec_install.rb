@@ -7,5 +7,5 @@ bash 'install_serverspec' do
 end
 
 execute 'init serverspec' do
-  command 'serverspec-init /root/'
+  command 'serverspec-init /root/ > /var/log/init-sspec.log'
 end
