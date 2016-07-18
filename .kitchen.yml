@@ -13,4 +13,5 @@ suites:
   - name: default
     run_list:
       - recipe[serverspec-healthcheck::ruby2_install]
+      - recipe[serverspec-healthcheck::serverspec_install]
     attributes:
