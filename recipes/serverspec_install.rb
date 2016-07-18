@@ -6,7 +6,7 @@ bash 'install_serverspec' do
     EOH
 end
 
-spec_path = node['serverspec']['spec_path']
+spec_path = node['serverspec']['dest_spec_path']
 
 execute 'init serverspec' do
   command "mkdir #{spec_path};cd #{spec_path};serverspec-init"
