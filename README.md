@@ -26,6 +26,9 @@ e.g.
 
 - `apt` - serverspec-healthcheck needs apt to do apt-get update.
 
+### Kitchen Test
+This cookbook is tested with Kitchen (rspec as busser).
+
 ## Attributes
 
 TODO: List your cookbook attributes here.
@@ -64,7 +67,7 @@ Just include `serverspec-healthcheck` in your node's `run_list`:
   ]
 }
 ```
-You need to introduce path to your `spec` files in attributes
+You need to introduce path to your `spec` files in attributes.
 
 ## Contributing
 

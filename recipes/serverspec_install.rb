@@ -8,4 +8,5 @@ end
 
 execute 'init serverspec' do
   command 'mkdir /root/serverspec;cd /root/serverspec;serverspec-init'
+  not_if { ::File.exist?("/root/serverspec/spec") }
 end
