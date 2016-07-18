@@ -54,7 +54,6 @@ e.g.
 
 TODO: Write usage instructions for each cookbook.
 
-e.g.
 Just include `serverspec-healthcheck` in your node's `run_list`:
 
 ```json
@@ -65,6 +64,7 @@ Just include `serverspec-healthcheck` in your node's `run_list`:
   ]
 }
 ```
+You need to introduce path to your `spec` files in attributes
 
 ## Contributing
 
