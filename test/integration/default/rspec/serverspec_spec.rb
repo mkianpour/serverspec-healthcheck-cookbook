@@ -11,6 +11,6 @@ end
 
 describe 'serverspec_init_check' do
   it 'file existance' do
-    expect(File).to exist('/root/Rakefile')    
+    expect(File).to exist('/root/serverspec/spec')    
   end
 end
