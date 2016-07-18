@@ -7,5 +7,5 @@ bash 'install_serverspec' do
 end
 
 execute 'init serverspec' do
-  command 'serverspec-init .'
+  command 'serverspec-init /root/'
 end
