@@ -6,7 +6,9 @@ bash 'install_serverspec' do
     EOH
 end
 
+spec_path = node['serverspec']['spec_path']
+
 execute 'init serverspec' do
-  command 'mkdir /root/serverspec;cd /root/serverspec;serverspec-init'
-  not_if { ::File.exist?("/root/serverspec/spec") }
+  command "mkdir #{spec_path};cd #{spec_path};serverspec-init"
+  not_if { ::File.exist?("#{spec_path}/spec") }
 end
