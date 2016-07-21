@@ -20,5 +20,5 @@ end
 
 execute 'sample specs' do
   command "cd #{spec_path};rake spec"
-  not_if { ::File.exist?("#{spec_path}/spec") }
+  only_if { ::File.exist?("#{spec_path}/spec") }
 end
