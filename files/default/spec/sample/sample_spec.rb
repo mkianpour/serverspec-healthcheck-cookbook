@@ -13,7 +13,7 @@ describe service('ssh'), :if => os[:family] == 'redhat' do
   it { should be_running }
 end
 
-describe service('ssh'), :if => os[:family] == 'ubuntu' do
+describe service('ssh23'), :if => os[:family] == 'ubuntu' do
   it { should be_enabled }
   it { should be_running }
 end
