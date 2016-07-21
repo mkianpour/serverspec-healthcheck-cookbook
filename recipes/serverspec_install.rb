@@ -18,7 +18,7 @@ remote_directory "#{node['serverspec']['dest_spec_path']}/spec" do
   action :create
 end
 
-remote_file "#{node['serverspec']['dest_spec_path']}/Rakefile" do
+cookbook_file "#{node['serverspec']['dest_spec_path']}/Rakefile" do
   source "#{node['serverspec']['user_spec_path']}/Rakefile"
   action :create
 end
