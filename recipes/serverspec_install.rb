@@ -8,7 +8,13 @@ end
 
 spec_path = node['serverspec']['dest_spec_path']
 
-execute 'init serverspec' do
-  command "mkdir #{spec_path};cd #{spec_path};serverspec-init"
+execute 'sample specs' do
+  command "mkdir #{spec_path};cd #{spec_path}"
+  not_if { ::File.exist?("#{spec_path}/spec") }
+end
+
+remote_directory "#{node['serverspec']['dest_spec_path']}/spec" do
+  source "#{node['serverspec']['user_spec_path']}"
+  action :create
   not_if { ::File.exist?("#{spec_path}/spec") }
 end
